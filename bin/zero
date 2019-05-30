@@ -1,0 +1,10 @@
+#! /usr/bin/env node
+
+const program = require('commander');
+
+console.log(process.argv);
+
+program
+  .usage('<command> [options]')
+  .command('init [name]', 'init a project')
+  .parse(process.argv)

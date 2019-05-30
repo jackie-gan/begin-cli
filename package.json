@@ -1,0 +1,28 @@
+{
+  "name": "zero-cli",
+  "version": "0.0.1",
+  "description": "A cli for init project",
+  "bin": {
+    "zero": "bin/zero"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackie-gan/zero-cli.git"
+  },
+  "keywords": [
+    "cli"
+  ],
+  "author": "jackie-gan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jackie-gan/zero-cli/issues"
+  },
+  "homepage": "https://github.com/jackie-gan/zero-cli#readme",
+  "dependencies": {
+    "commander": "^2.20.0"
+  }
+}
