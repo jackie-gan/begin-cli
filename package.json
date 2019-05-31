@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/jackie-gan/zero-cli#readme",
   "dependencies": {
-    "commander": "^2.20.0"
+    "commander": "^2.20.0",
+    "inquirer": "^6.3.1"
   }
 }

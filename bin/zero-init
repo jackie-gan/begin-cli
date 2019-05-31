@@ -1,6 +1,12 @@
 #! /usr/bin/env node
 
 const program = require('commander');
+const Project = require('./../src/index');
 
 program
   .option('--name [name]', '项目名称')
+  .parse(process.argv);
+
+const project = new Project();
+
+project.ask();
