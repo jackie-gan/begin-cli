@@ -5,8 +5,15 @@ const Project = require('./../src/index');
 
 program
   .option('--name [name]', '项目名称')
+  .option('--desc [desc]', '项目描述')
   .parse(process.argv);
 
-const project = new Project();
+const { name, desc } = program;
+const projectName = name || program.args[0];
 
-project.ask();
+const project = new Project({
+  projectName,
+  description: desc
+});
+
+project.create();

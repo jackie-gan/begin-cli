@@ -1,9 +1,13 @@
 const inquirer = require('inquirer');
 
-function Project() {
+function Project(options) {
+  this.config = Object.assign({
+    projectName: null,
+    description: ''
+  }, options);
 }
 
-Project.prototype.ask = function() {
+Project.prototype.create = function() {
   const prompts = [];
   prompts.push({
     type: 'input',
