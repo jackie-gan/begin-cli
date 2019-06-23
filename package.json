@@ -1,6 +1,6 @@
 {
   "name": "zero-cli",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A cli for init project",
   "bin": {
     "zero": "bin/zero"
@@ -14,7 +14,8 @@
     "url": "git+https://github.com/jackie-gan/zero-cli.git"
   },
   "keywords": [
-    "cli"
+    "cli",
+    "zero"
   ],
   "author": "jackie-gan",
   "license": "MIT",
@@ -23,8 +24,11 @@
   },
   "homepage": "https://github.com/jackie-gan/zero-cli#readme",
   "dependencies": {
+    "chalk": "^2.4.2",
     "commander": "^2.20.0",
+    "download-git-repo": "^2.0.0",
     "fs-extra": "^8.0.1",
-    "inquirer": "^6.3.1"
+    "inquirer": "^6.3.1",
+    "ora": "^3.4.0"
   }
 }
