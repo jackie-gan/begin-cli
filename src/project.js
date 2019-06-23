@@ -1,5 +1,10 @@
 const inquirer = require('inquirer');
 const fse = require('fs-extra');
+const download = require('download-git-repo');
+const { TEMPLATE_GIT_REPO } = require('./constants');
+const chalk = require('chalk');
+const ora = require('ora');
+const path = require('path');
 
 function Project(options) {
   this.config = Object.assign({
@@ -64,9 +69,22 @@ Project.prototype.inquire = function() {
 
 Project.prototype.generate = function() {
   const { projectName, description } = this.config;
-  console.log(projectName, description);
+  const projectPath = path.join(process.cwd(), './', projectName);
+  const downloadPath = path.join(projectPath, '__download__');
 
+  const downloadSpinner = ora('正在下载模板，请稍等');
+  downloadSpinner.start();
   // 下载git repo
+  download(TEMPLATE_GIT_REPO, downloadPath, { clone: true }, (err) => {
+    if (err) {
+      downloadSpinner.fail();
+      console.log('下载失败');
+      return;
+    }
+
+    downloadSpinner.succeed();
+    console.log('下载成功');
+  });
 
   // 复制文件
 
