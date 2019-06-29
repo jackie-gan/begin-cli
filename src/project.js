@@ -8,7 +8,7 @@ const path = require('path');
 const memFs = require('mem-fs');
 const editor = require('mem-fs-editor');
 const { getDirFileName } = require('./utils');
-const exec = require('child_process');
+const { exec } = require('child_process');
 
 function Project(options) {
   this.config = Object.assign({
@@ -132,7 +132,7 @@ Project.prototype.generate = function() {
 
       // git 初始化
       console.log();
-      const gitInitSpinner = ora(`cd ${chalk.green.bold(projectName)}, 执行 ${chalk.green.bold('git init')}`);
+      const gitInitSpinner = ora(`cd ${chalk.green.bold(projectName)}目录, 执行 ${chalk.green.bold('git init')}`);
       gitInitSpinner.start();
 
       const gitInit = exec('git init');
@@ -148,6 +148,7 @@ Project.prototype.generate = function() {
         // 安装依赖
         console.log();
         const installSpinner = ora(`安装项目依赖 ${chalk.green.bold('npm install')}, 请稍后...`);
+        installSpinner.start();
         exec('npm install', (error, stdout, stderr) => {
           if (error) {
             installSpinner.color = 'red';
@@ -160,7 +161,7 @@ Project.prototype.generate = function() {
 
             console.log();
             console.log(chalk.green('创建项目成功！'));
-            console.log(chalk.green('Coding吧！嘿嘿😝'));
+            console.log(chalk.green('Let\'s Coding吧！嘿嘿😝'));
           }
         })
       })
