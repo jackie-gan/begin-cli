@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 const program = require('commander');
-const Project = require('./../src/project');
+const Project = require('../src/project');
 
 program
   .option('--name [name]', '项目名称')

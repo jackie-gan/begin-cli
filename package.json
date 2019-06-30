@@ -1,9 +1,9 @@
 {
-  "name": "zero-cli",
+  "name": "begin-cli",
   "version": "0.2.0",
   "description": "A cli for init project",
   "bin": {
-    "zero": "bin/zero"
+    "begin": "bin/begin"
   },
   "main": "index.js",
   "scripts": {
